@@ -4,4 +4,4 @@ from . import models
 class get_image(forms.ModelForm):
     class Meta:
         model = models.aks
-        fields = ['img']
+        fields = ['img', 'id']

@@ -9,7 +9,7 @@ urlpatterns = [
     path('', views.first_page, name='first_page'),
     path('show_all/', views.show_all, name='show_all'),
     path('upload/', views.upload, name='upload'),
-    path('edit/', views.edit, name='edit')
+    path('edit/<int:shomare>/', views.edit, name='edit')
 ]
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
