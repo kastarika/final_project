@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>current pic</h1>
+    <img src="{{last_img.img.url}}">
+    <form action="{% url 'edit:edit' %}" method="post">
+      {% csrf_token %}
+      <p>for croping the pictue insert left top right down</p>
+      <input type="number" name="crop_left" value=0>
+      <input type="number" name="crop_up" value=0>
+      <input type="number" name="crop_right" value=1>
+      <input type="number" name="crop_down" value=1>
+
+      <p>for resizing the picture insert width height</p>
+      <input type="number" name="resize_width" value=1>
+      <input type="number" name="resize_height" value=1>
+
+      <p>for rotating insert the degree</p>
+      <input type="number" name="rotation_degree" value=0>
+
+      <p>choose what kind of change you wanna make</p>
+      <input required type="radio" name="edit_type" value="crop">crop<br>
+      <input required type="radio" name="edit_type" value="resize">resize<br>
+      <input required type="radio" name="edit_type" value="convert">convert<br>
+      <input required type="radio" name="edit_type" value="rotate">rotate<br>
+      <input required type="radio" name="edit_type" value="share">share<br>
+
+      <input type="submit" value="apply">
+      <input type="submit" name="go_back" value="go back to first page">
+    </form>
+  </body>
+</html>

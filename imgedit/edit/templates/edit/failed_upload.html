@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>FAILED TO UPLOAD CORRECTLY</h1>
+    <form action="{% url 'edit:upload' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{get_image}}
+      <input type="submit" value="upload">
+    </form>
+  </body>
+</html>
